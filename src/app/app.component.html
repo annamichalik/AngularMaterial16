@@ -1,9 +1,18 @@
 <mat-form-field>
   <mat-label>Choose a date</mat-label>
-<!-- #docregion toggle -->
+  <!-- #docregion toggle -->
   <input matInput [matDatepicker]="picker">
-  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-hint>YYYY-MM-DD</mat-hint>
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
-<!-- #enddocregion toggle -->
+  <!-- #enddocregion toggle -->
+</mat-form-field>
+
+<mat-form-field (click)="picker2.open();">
+  <mat-label>Date/Time</mat-label>
+  <input matInput [ngxMatDatetimePicker]="picker2"
+         readonly="readonly"/>
+  <mat-datepicker-toggle [for]="$any(picker2)"></mat-datepicker-toggle>
+  <ngx-mat-datetime-picker #picker2>
+  </ngx-mat-datetime-picker>
 </mat-form-field>
