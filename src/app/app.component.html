@@ -16,3 +16,14 @@
   <ngx-mat-datetime-picker #picker2>
   </ngx-mat-datetime-picker>
 </mat-form-field>
+
+<mat-form-field class="range-form-field">
+  <mat-label> Rate Range</mat-label>
+  <mat-date-range-input [rangePicker]="rangePicker">
+    <input matStartDate placeholder="Start date">
+    <input matEndDate placeholder="End date">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+  <mat-date-range-picker #rangePicker>
+  </mat-date-range-picker>
+</mat-form-field>
