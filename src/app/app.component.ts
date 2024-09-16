@@ -6,6 +6,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule} from '@angular/mater
 import {NGX_MAT_DATE_FORMATS, NgxMatDatetimePickerModule} from "@angular-material-components/datetime-picker";
 import {CUSTOM_MAT_DATE_FORMATS, CUSTOM_MAT_DATE_TIME_FORMATS} from "./formats";
 import {MomentDateAdapter} from "@angular/material-moment-adapter";
+import {Tree5LevelsDeepComponent} from "./component/tree5-levels-deep/tree5-levels-deep.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import {MomentDateAdapter} from "@angular/material-moment-adapter";
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule,
-    MatNativeDateModule, NgxMatDatetimePickerModule],
+    MatNativeDateModule, NgxMatDatetimePickerModule, Tree5LevelsDeepComponent],
   providers: [
     {
       provide: DateAdapter,
