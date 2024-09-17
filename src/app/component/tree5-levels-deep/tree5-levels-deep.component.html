@@ -1,9 +1,12 @@
+<h1>Only one selected node {{selectedNode}}</h1>
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
   <!-- This is the tree node template for leaf nodes -->
   <!-- There is inline padding applied to this node using styles.
     This padding value depends on the mat-icon-button width. -->
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
     <mat-checkbox class="checklist-leaf-node"
+                  [checked]="isSelected(node)"
+                  (click)="nodeClicked(node)"
                   color="primary">
       {{ node.name }}
     </mat-checkbox>

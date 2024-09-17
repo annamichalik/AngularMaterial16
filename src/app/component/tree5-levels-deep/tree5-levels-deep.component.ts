@@ -58,11 +58,20 @@ const TREE_DATA: FoodNode[] = [
 export class Tree5LevelsDeepComponent {
   treeControl = new NestedTreeControl<FoodNode>((node: FoodNode) => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
+  selectedNode = 'NONE';
 
   constructor() {
     this.dataSource.data = TREE_DATA;
   }
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+
+  nodeClicked(node: FoodNode) {
+    this.selectedNode = node.name;
+  }
+
+  isSelected(node: FoodNode) {
+    return this.selectedNode === node.name;
+  }
 }
 
