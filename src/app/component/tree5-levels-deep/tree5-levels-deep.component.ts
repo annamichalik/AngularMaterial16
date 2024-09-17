@@ -4,6 +4,7 @@ import {MatTreeModule, MatTreeNestedDataSource} from "@angular/material/tree";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {NestedTreeControl} from "@angular/cdk/tree";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 /**
  * Food data with nested structure.
@@ -20,11 +21,23 @@ const TREE_DATA: FoodNode[] = [
     children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
   },
   {
-    name: 'Vegetables',
+    name: 'Vegetables_level1',
     children: [
       {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
+        name: 'Green_level2',
+        children:
+          [{
+            name: 'Broccoli_level3',
+            children: [{
+              name: 'Pumpkins_level4',
+              children: [{
+                name: 'Pump_level5',
+                children: [{name: 'Pumpkins_level 6'}, {name: 'Carrots'}],
+              }
+                , {name: 'Carrots'}],
+            }, {name: 'Carrots'}],
+          }
+            , {name: 'Brussels sprouts'}],
       },
       {
         name: 'Orange',
@@ -37,7 +50,7 @@ const TREE_DATA: FoodNode[] = [
 @Component({
   selector: 'app-tree5-levels-deep',
   standalone: true,
-  imports: [MatTreeModule, MatButtonModule, MatIconModule, MatTreeModule, MatIconModule],
+  imports: [MatTreeModule, MatButtonModule, MatIconModule, MatTreeModule, MatIconModule, MatCheckboxModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tree5-levels-deep.component.html',
   styleUrls: ['./tree5-levels-deep.component.scss']
